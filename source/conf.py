@@ -298,12 +298,17 @@ slide_theme_options = {
         #     'github': u'http://github.com/dhable',
         #     'company': u''
         # },
+        #{
+        #    'name': 'Cris Ewing',
+        #    'twitter': '@crisewing',
+        #    'www': 'http://crisewing.com',
+        #    'github': 'http://github.com/cewing',
+        #    'company': 'Cris Ewing, Developer LLC'
+        #},
         {
-            'name': 'Cris Ewing',
-            'twitter': '@crisewing',
-            'www': 'http://crisewing.com',
-            'github': 'http://github.com/cewing',
-            'company': 'Cris Ewing, Developer LLC'
+            'name': 'Paul Pham',
+            'twitter': '@cryptogoth',
+            'github': 'http://github.com/ppham',
         },
     ]
 }
