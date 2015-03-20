@@ -1547,7 +1547,7 @@ demonstrate that your three functions work properly.
 
 Use comments in this block to inform the observer what your tests do.
 
-Add your new module to your local repo (on branch `task5`) and commit frequently while working on
+Add your new module to your local repo (on branch `task4`) and commit frequently while working on
 your implementation. Include good commit messages that explain concisely both
 *what* you are doing and *why*.
 
@@ -1589,7 +1589,7 @@ spread out across three files.
 Use everything you've learned
 so far (including functions, booleans, and printing).
 
-Create a branch in your local repo called `task4` and switch to it (`git checkout task4`).
+Create a branch in your local repo called `task5` and switch to it (`git checkout task4`).
 
 Add your files
 to that branch, commit and push, then submit a pull request to
