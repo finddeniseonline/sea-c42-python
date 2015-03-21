@@ -1500,9 +1500,16 @@ This gives us::
 
     0, 1, 1, 2, 3, 5, 8, 13, ...
 
-Create a branch in your local repo called `task5` and switch to it (`git checkout task5`).
+Create a branch in your local repo called `task4` and switch to it (`git checkout task4`).
 
-Create a new module ``series.py`` in the ``session02`` folder in your student folder. In it, add a function called ``fibonacci``. The function should have one parameter ``n``. The function should return the ``nth`` value in the fibonacci series.
+Create a ``session02`` folder in your student folder. For
+example, mine would have the path ``students/PaulPham/session02``.
+
+Create a new module ``series.py`` in the ``session02`` folder in your student folder. In it, add a function called ``fibonacci``. The function should have one parameter ``n``. The function should return the ``nth`` value in the fibonacci series, starting at 0.
+
+For example, ``fibonacci(n=0)`` should equal ``0``.
+``fibonacci(n=1)`` should equal ``1``.
+``fibonacci(n=2)`` should equal ``1``. And so forth.
 
 Ensure that your function has a well-formed ``docstring``
 
@@ -1579,7 +1586,9 @@ For each function, write a good ``docstring`` describing what
 question you are trying to answer.
 
 Put the functions in three separate modules (files) called
-`sequences.py`, `iteration.py`, and `string.py`.
+`sequences.py`, `iteration.py`, and `string.py` in the
+``session02`` subdirectory of your student directory, just as
+you did for ``series.py`` up above.
 
 .. nextslide::
 
@@ -1589,7 +1598,7 @@ spread out across three files.
 Use everything you've learned
 so far (including functions, booleans, and printing).
 
-Create a branch in your local repo called `task5` and switch to it (`git checkout task4`).
+Create a branch in your local repo called `task5` and switch to it (`git checkout task5`).
 
 Add your files
 to that branch, commit and push, then submit a pull request to
