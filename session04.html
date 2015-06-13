@@ -1,40 +1,16 @@
-<!--
-Google IO 2012/2013 HTML5 Slide Template
-
-Authors: Eric Bidelman <ebidel@gmail.com>
-         Luke Mahé <lukem@google.com>
-
-URL: https://code.google.com/p/io-2012-slides
---><!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html>
-<head>
-  <title>Session Four: Dictionaries, Sets, Exceptions, and Files &mdash; Foundations 2: Python</title>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-  <!--This one seems to work all the time, but really small on ipad-->
-  <!--<meta name="viewport" content="initial-scale=0.4">-->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  
-  <link rel="stylesheet" media="all"
-        href="_static/theme/css/default.css">
-  <link rel="stylesheet" media="all"
-        href="_static/theme/css/hieroglyph.css">
-  <link rel="stylesheet" media="only screen and (max-device-width: 480px)"
-        href="_static/theme/css/phone.css">
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <link rel="stylesheet" href="_static/custom.css"
-          type="text/css" />
+    <title>Session Four: Dictionaries, Sets, Exceptions, and Files &mdash; Code Fellows F2 Python, March-April 2015</title>
     
-
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -44,58 +20,57 @@ URL: https://code.google.com/p/io-2012-slides
         HAS_SOURCE:  true
       };
     </script>
-
-    <script data-main="_static/js/slides"
-            src="_static/js/require-1.0.8.min.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    
-    <link rel="top" title="Foundations 2: Python" href="index.html" />
+    <link rel="top" title="Code Fellows F2 Python, March-April 2015" href="index.html" />
     <link rel="next" title="Session Five: Arguments, Comprehensions, Lambdas and Functional Programming" href="session05.html" />
-    <link rel="prev" title="Session Three: Sequences, Iteration and String Formatting" href="session03.html" /> 
-</head>
-<body style="opacity: 0">
+    <link rel="prev" title="Session Three: Sequences, Iteration and String Formatting" href="session03.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
 
-<slides class="layout-widescreen">
+  </head>
+  <body role="document">
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/cf_logo.png" alt="Logo"/>
+      <p>Code Fellows</p>
+    </a>
+  </div>
+</div>
 
-  <slide class="title-slide segue nobackground">
-  <aside class="gdbar"><img src="https://dgosxlrnzhofi.cloudfront.net/assets/logo-3fc81b216ed94ef783583de4160a97ef.svg"></aside>
-  <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
-  <hgroup class="auto-fadein">
-    <h1 data-config-title><!-- populated from slide_config.json --></h1>
-    <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
-    <p data-config-presenter><!-- populated from slide_config.json --></p>
-  </hgroup>
-</slide>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="session05.html" title="Session Five: Arguments, Comprehensions, Lambdas and Functional Programming"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="session03.html" title="Session Three: Sequences, Iteration and String Formatting"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">F2 Python</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-  
-    <slide class="level-1">
-    <hgroup>
-      <h1>Session Four: Dictionaries, Sets, Exceptions, and Files</h1>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-2">
-    <hgroup>
-      <h2>Review/Questions</h2>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Review of Previous Classes</h3>
-    </hgroup>
-    <article class="">
-      <ul class="build simple">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="session-four-dictionaries-sets-exceptions-and-files">
+<h1>Session Four: Dictionaries, Sets, Exceptions, and Files<a class="headerlink" href="#session-four-dictionaries-sets-exceptions-and-files" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="review-questions">
+<h2>Review/Questions<a class="headerlink" href="#review-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="review-of-previous-classes">
+<h3>Review of Previous Classes<a class="headerlink" href="#review-of-previous-classes" title="Permalink to this headline">¶</a></h3>
+<ul class="build simple">
 <li>Sequences<ul>
 <li>Slicing</li>
 <li>Lists</li>
@@ -115,17 +90,7 @@ URL: https://code.google.com/p/io-2012-slides
 </ul>
 <div class="container">
 Any questions?</div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Review of Previous Classes</h3>
-    </hgroup>
-    <article class="">
-      <p>A couple other nifty utilties with for loops:</p>
+<p>A couple other nifty utilties with for loops:</p>
 <p><strong>tuple unpacking:</strong></p>
 <p>remember this?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
@@ -142,17 +107,10 @@ Any questions?</div>
 <span class="go">i:5, j:6</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Looping through two loops at once:</h3>
-    </hgroup>
-    <article class="">
-      <p><strong>zip:</strong></p>
+</div>
+<div class="section" id="looping-through-two-loops-at-once">
+<h3>Looping through two loops at once:<a class="headerlink" href="#looping-through-two-loops-at-once" title="Permalink to this headline">¶</a></h3>
+<p><strong>zip:</strong></p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [10]: </span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="gp">In [11]: </span><span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="gp">In [12]: </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">):</span>
@@ -163,44 +121,27 @@ Any questions?</div>
 <span class="go">i:3, j:5</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Homework comments</h3>
-    </hgroup>
-    <article class="">
-      <p>Building up a long string.</p>
+</div>
+<div class="section" id="homework-comments">
+<h3>Homework comments<a class="headerlink" href="#homework-comments" title="Permalink to this headline">¶</a></h3>
+<p>Building up a long string.</p>
 <p>The obvious thing to do is something like:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">msg</span> <span class="o">=</span> <span class="s">u&quot;&quot;</span>
 <span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="n">list_of_stuff</span><span class="p">:</span>
     <span class="n">msg</span> <span class="o">+=</span> <span class="n">piece</span>
 </pre></div>
 </div>
-<p>But: strings are immutable -- python needs to create a new string each time you
-add a piece -- not efficient:</p>
+<p>But: strings are immutable &#8211; python needs to create a new string each time you
+add a piece &#8211; not efficient:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">msg</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="n">list_of_stuff</span><span class="p">:</span>
     <span class="n">msg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">piece</span><span class="p">)</span>
 <span class="s">u&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>appending to lists is efficient -- and so is the join() method of strings.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Homework comments</h3>
-    </hgroup>
-    <article class="">
-      <p>What is <tt class="docutils literal"><span class="pre">assert</span></tt> for?</p>
-<p>Testing -- NOT for issues expected to happen operationally:</p>
+<p>appending to lists is efficient &#8211; and so is the join() method of strings.</p>
+<p>What is <code class="docutils literal"><span class="pre">assert</span></code> for?</p>
+<p>Testing &#8211; NOT for issues expected to happen operationally:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">assert</span> <span class="n">m</span> <span class="o">&gt;=</span> <span class="mi">0</span>
 </pre></div>
 </div>
@@ -209,61 +150,79 @@ add a piece -- not efficient:</p>
     <span class="k">raise</span> <span class="ne">ValueError</span>
 </pre></div>
 </div>
-<p>I'll cover Exceptions later this class...</p>
+<p>I&#8217;ll cover Exceptions later this class...</p>
 <p>(Asserts get ignored if optimization is turned on!)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2">
-    <hgroup>
-      <h2>A little warm up</h2>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Fun with strings</h3>
-    </hgroup>
-    <article class="">
-      <ul class="simple">
-<li>Rewrite: <tt class="docutils literal"><span class="pre">the</span> <span class="pre">first</span> <span class="pre">3</span> <span class="pre">numbers</span> <span class="pre">are:</span> <span class="pre">%i,</span> <span class="pre">%i,</span> <span class="pre">%i&quot;%(1,2,3)</span></tt><ul>
+</div>
+</div>
+<div class="section" id="a-little-warm-up">
+<h2>A little warm up<a class="headerlink" href="#a-little-warm-up" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fun-with-strings">
+<h3>Fun with strings<a class="headerlink" href="#fun-with-strings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Rewrite: <code class="docutils literal"><span class="pre">the</span> <span class="pre">first</span> <span class="pre">3</span> <span class="pre">numbers</span> <span class="pre">are:</span> <span class="pre">%i,</span> <span class="pre">%i,</span> <span class="pre">%i&quot;%(1,2,3)</span></code><ul>
 <li>for an arbitrary number of numbers...</li>
 </ul>
 </li>
 <li>Write a format string that will take:<ul>
-<li><tt class="docutils literal"><span class="pre">(</span> <span class="pre">2,</span> <span class="pre">123.4567,</span> <span class="pre">10000)</span></tt></li>
+<li><code class="docutils literal"><span class="pre">(</span> <span class="pre">2,</span> <span class="pre">123.4567,</span> <span class="pre">10000)</span></code></li>
 <li>and produce:</li>
-<li>`` &quot;file_002 :   123.46, 1e+04&quot; ``</li>
+<li>`` &#8220;file_002 :   123.46, 1e+04&#8221; ``</li>
 </ul>
 </li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2">
-    <hgroup>
-      <h2>Dictionaries and Sets</h2>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionary</h3>
-    </hgroup>
-    <article class="">
-      <p>Python calls it a <tt class="docutils literal"><span class="pre">dict</span></tt></p>
+</div>
+</div>
+<div class="section" id="homework-review">
+<h2>Homework Review<a class="headerlink" href="#homework-review" title="Permalink to this headline">¶</a></h2>
+<p>Someone volunteer to have their homeworks
+(Task 6 and 7) debugged in-class.</p>
+<p>Free programming help!</p>
+</div>
+<div class="section" id="prepare-your-questions">
+<h2>Prepare your Questions<a class="headerlink" href="#prepare-your-questions" title="Permalink to this headline">¶</a></h2>
+<p>Open up your task 7 files in your text editor.</p>
+<ul class="simple">
+<li>dictionaries.py</li>
+<li>exceptions.py</li>
+<li>paths.py</li>
+<li>files.py</li>
+</ul>
+</div>
+<div class="section" id="today-s-puzzle-trigrams">
+<h2>Today&#8217;s Puzzle: Trigrams<a class="headerlink" href="#today-s-puzzle-trigrams" title="Permalink to this headline">¶</a></h2>
+<p>N-grams are a way to study word associations</p>
+<p><a class="reference external" href="https://books.google.com/ngrams">https://books.google.com/ngrams</a></p>
+<ul>
+<li><p class="first">Coding Kata 14 - Dave Thomas</p>
+<p><a class="reference external" href="http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/">http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/</a></p>
+<p>and in this doc:</p>
+<p><a class="reference external" href="http://codefellows.github.io/sea-c34-python/supplements/kata_fourteen.html">http://codefellows.github.io/sea-c34-python/supplements/kata_fourteen.html</a></p>
+</li>
+<li><p class="first">Use &#8220;The Travels of Marco Polo the Venetian&#8221; as input:</p>
+<p><a class="reference external" href="http://codefellows.github.io/sea-c34-python/_downloads/marco-polo.txt">http://codefellows.github.io/sea-c34-python/_downloads/marco-polo.txt</a></p>
+</li>
+</ul>
+<ul class="simple">
+<li>Our task today: read in the words from a large text file,
+create a dictionary of trigrams.</li>
+<li>Write pseudo code and create a design.</li>
+<li>Use dictionaries, exceptions, file reading/writing.</li>
+</ul>
+</div>
+<div class="section" id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Enter your attendance in Canvas.</li>
+<li>When are office hours?</li>
+<li>Tell us when you prefer TA office hours</li>
+<li>Collaboration is okay, but not copying.</li>
+</ul>
+</div>
+<div class="section" id="dictionaries-and-sets">
+<h2>Dictionaries and Sets<a class="headerlink" href="#dictionaries-and-sets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dictionary">
+<h3>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h3>
+<p>Python calls it a <code class="docutils literal"><span class="pre">dict</span></code></p>
 <p>Other languages call it:</p>
 <ul class="simple">
 <li>dictionary</li>
@@ -273,17 +232,10 @@ add a piece -- not efficient:</p>
 <li>hash</li>
 <li>key-value pair</li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionary Constructors</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="s">&#39;key1&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;key2&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+</div>
+<div class="section" id="dictionary-constructors">
+<h3>Dictionary Constructors<a class="headerlink" href="#dictionary-constructors" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="s">&#39;key1&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;key2&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 <span class="go">{&#39;key1&#39;: 3, &#39;key2&#39;: 5}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">([(</span><span class="s">&#39;key1&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),(</span><span class="s">&#39;key2&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
 <span class="go">{&#39;key1&#39;: 3, &#39;key2&#39;: 5}</span>
@@ -296,17 +248,10 @@ add a piece -- not efficient:</p>
 <span class="go">{&#39;key1&#39;: 3, &#39;key2&#39;: 5}</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionary Indexing</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
+</div>
+<div class="section" id="dictionary-indexing">
+<h3>Dictionary Indexing<a class="headerlink" href="#dictionary-indexing" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;score&#39;</span><span class="p">]</span>
 <span class="go">42</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s">&#39;one&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s">&#39;zero&#39;</span><span class="p">}</span>
@@ -316,22 +261,9 @@ add a piece -- not efficient:</p>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
 <span class="gr">KeyError</span>: <span class="n">&#39;non-existing key&#39;</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">KeyError</span>: <span class="n">&#39;non-existing key&#39;</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionary Indexing</h3>
-    </hgroup>
-    <article class="">
-      <p>Keys can be any <strong>immutable</strong> object:</p>
+<p>Keys can be any <strong>immutable</strong> object:</p>
 <ul class="simple">
 <li>number</li>
 <li>string</li>
@@ -345,18 +277,8 @@ add a piece -- not efficient:</p>
 <span class="go">   TypeError: unhashable type: &#39;list&#39;</span>
 </pre></div>
 </div>
-<p>Actually -- any &quot;hashable&quot; type.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Hashing</h3>
-    </hgroup>
-    <article class="">
-      <p>Hash functions convert arbitrarily large data to a small proxy (usually int)</p>
+<p>Actually &#8211; any &#8220;hashable&#8221; type.</p>
+<p>Hash functions convert arbitrarily large data to a small proxy (usually int)</p>
 <div class="build container">
 <p>Always return the same proxy for the same input</p>
 <p>MD5, SHA, etc</p>
@@ -369,17 +291,7 @@ bucket with very few keys (often just one)</p>
 <p>Key lookup is very efficient</p>
 <p>Same average time regardless of size</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionary indexing</h3>
-    </hgroup>
-    <article class="">
-      <p>Note: Python name look-ups are implemented with dict -- it's highly optimized</p>
+<p>Note: Python name look-ups are implemented with dict &#8211; it&#8217;s highly optimized</p>
 <div class="build container">
 <p>Key to value:</p>
 <ul class="simple">
@@ -392,17 +304,10 @@ bucket with very few keys (often just one)</p>
 <p>If you need to check dict values often, create another dict or set</p>
 <p>(up to you to keep them in sync)</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionary Ordering (not)</h3>
-    </hgroup>
-    <article class="">
-      <p>Dictionaries have no defined order</p>
+</div>
+<div class="section" id="dictionary-ordering-not">
+<h3>Dictionary Ordering (not)<a class="headerlink" href="#dictionary-ordering-not" title="Permalink to this headline">¶</a></h3>
+<p>Dictionaries have no defined order</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [352]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;one&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;two&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;three&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 <span class="gp">In [353]: </span><span class="n">d</span>
 <span class="gh">Out[353]: </span><span class="go">{&#39;one&#39;: 1, &#39;three&#39;: 3, &#39;two&#39;: 2}</span>
@@ -415,17 +320,10 @@ bucket with very few keys (often just one)</p>
 can be relied on.</p>
 <p>It cannot.</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionary Iterating</h3>
-    </hgroup>
-    <article class="">
-      <p><tt class="docutils literal"><span class="pre">for</span></tt>  iterates over the keys</p>
+</div>
+<div class="section" id="dictionary-iterating">
+<h3>Dictionary Iterating<a class="headerlink" href="#dictionary-iterating" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">for</span></code>  iterates over the keys</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [15]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 
 <span class="gp">In [16]: </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
@@ -436,17 +334,10 @@ can be relied on.</p>
 </pre></div>
 </div>
 <p>(note the different order...)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>dict keys and values</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [20]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
+</div>
+<div class="section" id="dict-keys-and-values">
+<h3>dict keys and values<a class="headerlink" href="#dict-keys-and-values" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [20]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 
 <span class="gp">In [21]: </span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 <span class="gh">Out[21]: </span><span class="go">[&#39;score&#39;, &#39;name&#39;]</span>
@@ -458,17 +349,10 @@ can be relied on.</p>
 <span class="gh">Out[23]: </span><span class="go">[(&#39;score&#39;, 42), (&#39;name&#39;, &#39;Brian&#39;)]</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>dict keys and values</h3>
-    </hgroup>
-    <article class="">
-      <p>Iterating on everything</p>
+</div>
+<div class="section" id="id1">
+<h3>dict keys and values<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Iterating on everything</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [26]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Brian&#39;</span><span class="p">,</span> <span class="s">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 
 <span class="gp">In [27]: </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -478,35 +362,21 @@ can be relied on.</p>
 <span class="go">name: Brian</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionary Performance</h3>
-    </hgroup>
-    <article class="">
-      <ul class="simple">
+</div>
+<div class="section" id="dictionary-performance">
+<h3>Dictionary Performance<a class="headerlink" href="#dictionary-performance" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
 <li>indexing is fast and constant time: O(1)</li>
-<li>Membership (<tt class="docutils literal"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">s</span></tt>) constant time: O(1)</li>
+<li>Membership (<code class="docutils literal"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">s</span></code>) constant time: O(1)</li>
 <li>visiting all is proportional to n: O(n)</li>
 <li>inserting is constant time: O(1)</li>
 <li>deleting is constant time: O(1)</li>
 </ul>
 <p><a class="reference external" href="http://wiki.python.org/moin/TimeComplexity">http://wiki.python.org/moin/TimeComplexity</a></p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Other dict operations:</h3>
-    </hgroup>
-    <article class="">
-      <p>See them all here:</p>
+</div>
+<div class="section" id="other-dict-operations">
+<h3>Other dict operations:<a class="headerlink" href="#other-dict-operations" title="Permalink to this headline">¶</a></h3>
+<p>See them all here:</p>
 <p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#mapping-types-dict">https://docs.python.org/2/library/stdtypes.html#mapping-types-dict</a></p>
 <p>Is it in there?</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [5]: </span><span class="n">d</span>
@@ -520,17 +390,7 @@ can be relied on.</p>
 </pre></div>
 </div>
 <p>Membership is on the keys.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Getting Something</h3>
-    </hgroup>
-    <article class="">
-      <p>(like indexing)</p>
+<p>(like indexing)</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [9]: </span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;this&#39;</span><span class="p">)</span>
 <span class="gh">Out[9]: </span><span class="go">5</span>
 </pre></div>
@@ -543,17 +403,7 @@ can be relied on.</p>
 </div>
 <p>Never raises an Exception (default default is None)</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Iterating</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [13]: </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [13]: </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
 <span class="gp">   ....: </span>    <span class="k">print</span> <span class="n">item</span>
 <span class="gp">   ....:</span>
 <span class="go">(&#39;this&#39;, 5)</span>
@@ -570,18 +420,8 @@ can be relied on.</p>
 <span class="go">7</span>
 </pre></div>
 </div>
-<p>the <tt class="docutils literal"><span class="pre">iter*</span></tt> methods <em>don't actually create the lists</em>.</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Popping</h3>
-    </hgroup>
-    <article class="">
-      <p>gets the value at a given key while removing it</p>
+<p>the <code class="docutils literal"><span class="pre">iter*</span></code> methods <em>don&#8217;t actually create the lists</em>.</p>
+<p>gets the value at a given key while removing it</p>
 <div class="build container">
 <p>Pop just a key</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [19]: </span><span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;this&#39;</span><span class="p">)</span>
@@ -598,18 +438,8 @@ can be relied on.</p>
 </pre></div>
 </div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Handy Method</h3>
-    </hgroup>
-    <article class="">
-      <p><tt class="docutils literal"><span class="pre">setdefault(key[,</span> <span class="pre">default])</span></tt></p>
-<p>gets the value if it's there, sets it if it's not</p>
+<p><code class="docutils literal"><span class="pre">setdefault(key[,</span> <span class="pre">default])</span></code></p>
+<p>gets the value if it&#8217;s there, sets it if it&#8217;s not</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [26]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="gp">In [27]: </span><span class="n">d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">u&#39;something&#39;</span><span class="p">,</span> <span class="s">u&#39;a value&#39;</span><span class="p">)</span>
@@ -622,18 +452,8 @@ can be relied on.</p>
 <span class="gh">Out[30]: </span><span class="go">{u&#39;something&#39;: u&#39;a value&#39;}</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Other dict operations:</h3>
-    </hgroup>
-    <article class="">
-      <p>dict View objects:</p>
-<p>Like <tt class="docutils literal"><span class="pre">keys()</span></tt>, <tt class="docutils literal"><span class="pre">values()</span></tt>, <tt class="docutils literal"><span class="pre">items()</span></tt>, but maintain a link to the original dict</p>
+<p>dict View objects:</p>
+<p>Like <code class="docutils literal"><span class="pre">keys()</span></code>, <code class="docutils literal"><span class="pre">values()</span></code>, <code class="docutils literal"><span class="pre">items()</span></code>, but maintain a link to the original dict</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [47]: </span><span class="n">d</span>
 <span class="gh">Out[47]: </span><span class="go">{u&#39;something&#39;: u&#39;a value&#39;}</span>
 <span class="gp">In [48]: </span><span class="n">item_view</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">viewitems</span><span class="p">()</span>
@@ -645,17 +465,10 @@ can be relied on.</p>
 <span class="gh">Out[51]: </span><span class="go">dict_items([(&#39;something else&#39;, u&#39;another value&#39;), (u&#39;something&#39;, u&#39;a value&#39;)])</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Sets</h3>
-    </hgroup>
-    <article class="">
-      <p>A <tt class="docutils literal"><span class="pre">set</span></tt>  is an unordered collection of distinct values</p>
+</div>
+<div class="section" id="sets">
+<h3>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal"><span class="pre">set</span></code>  is an unordered collection of distinct values</p>
 <p>Essentially a dict with only keys</p>
 <p>Set Constructors</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">()</span>
@@ -674,19 +487,12 @@ can be relied on.</p>
 <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Set Properties</h3>
-    </hgroup>
-    <article class="">
-      <p><tt class="docutils literal"><span class="pre">Set</span></tt>  members must be hashable</p>
+</div>
+<div class="section" id="set-properties">
+<h3>Set Properties<a class="headerlink" href="#set-properties" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">Set</span></code>  members must be hashable</p>
 <div class="build container">
-<p>Like dictionary keys -- and for same reason (efficient lookup)</p>
+<p>Like dictionary keys &#8211; and for same reason (efficient lookup)</p>
 <p>No indexing (unordered)</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
@@ -695,17 +501,10 @@ can be relied on.</p>
 </pre></div>
 </div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Set Methods</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-ipython"><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+</div>
+<div class="section" id="set-methods">
+<h3>Set Methods<a class="headerlink" href="#set-methods" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="c"># an arbitrary member</span>
 <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
@@ -720,17 +519,7 @@ can be relied on.</p>
 <span class="ne">KeyError</span><span class="p">:</span> <span class="mi">2</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Set Methods</h3>
-    </hgroup>
-    <article class="">
-      <p>All the &quot;set&quot; operations from math class...</p>
+<p>All the &#8220;set&#8221; operations from math class...</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">s</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
 <span class="n">s</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
@@ -744,40 +533,24 @@ can be relied on.</p>
 <span class="n">s</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span> <span class="n">other</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Frozen Set</h3>
-    </hgroup>
-    <article class="">
-      <p>Another kind of set: <tt class="docutils literal"><span class="pre">frozenset</span></tt></p>
-<p>immutable -- for use as a key in a dict
+</div>
+<div class="section" id="frozen-set">
+<h3>Frozen Set<a class="headerlink" href="#frozen-set" title="Permalink to this headline">¶</a></h3>
+<p>Another kind of set: <code class="docutils literal"><span class="pre">frozenset</span></code></p>
+<p>immutable &#8211; for use as a key in a dict
 (or another set...)</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
 <span class="gr">AttributeError</span>: <span class="n">&#39;frozenset&#39; object has no attribute &#39;add&#39;</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">AttributeError</span>: <span class="n">&#39;frozenset&#39; object has no attribute &#39;add&#39;</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2">
-    <hgroup>
-      <h2>Exceptions</h2>
-    </hgroup>
-    <article class="">
-      <div class="left container">
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<div class="left container">
 <p>Another Branching structure:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
     <span class="n">do_something</span><span class="p">()</span>
@@ -788,17 +561,9 @@ can be relied on.</p>
 </pre></div>
 </div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Exceptions</h3>
-    </hgroup>
-    <article class="">
-      <p>Never Do this:</p>
+<div class="section" id="id2">
+<h3>Exceptions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Never Do this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
     <span class="n">do_something</span><span class="p">()</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;missing.txt&#39;</span><span class="p">)</span>
@@ -807,41 +572,24 @@ can be relied on.</p>
     <span class="k">print</span> <span class="s">&quot;couldn&#39;t open missing.txt&quot;</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Exceptions</h3>
-    </hgroup>
-    <article class="">
-      <p>Use Exceptions, rather than your own tests:</p>
-<p>Don't do this:</p>
+</div>
+<div class="section" id="id3">
+<h3>Exceptions<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Use Exceptions, rather than your own tests:</p>
+<p>Don&#8217;t do this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">do_something</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;missing.txt&#39;</span><span class="p">):</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;missing.txt&#39;</span><span class="p">)</span>
     <span class="n">process</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>   <span class="c"># never called if file missing</span>
 </pre></div>
 </div>
-<p>It will almost always work -- but the almost will drive you crazy</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Exceptions</h3>
-    </hgroup>
-    <article class="">
-      <p>Example from homework</p>
+<p>It will almost always work &#8211; but the almost will drive you crazy</p>
+<p>Example from homework</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">num_in</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
     <span class="n">num_in</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_in</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>but -- <tt class="docutils literal"><span class="pre">int(num_in)</span></tt> will only work if the string can be converted to an integer.</p>
+<p>but &#8211; <code class="docutils literal"><span class="pre">int(num_in)</span></code> will only work if the string can be converted to an integer.</p>
 <p>So you can do</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
     <span class="n">num_in</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_in</span><span class="p">)</span>
@@ -850,47 +598,20 @@ can be relied on.</p>
 </pre></div>
 </div>
 <p>Or let the Exception be raised....</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>EAFP</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre>&quot;it&#39;s Easier to Ask Forgiveness than Permission&quot;
+<div class="highlight-python"><div class="highlight"><pre>&quot;it&#39;s Easier to Ask Forgiveness than Permission&quot;
 
 -- Grace Hopper
 </pre></div>
 </div>
 <p><a class="reference external" href="http://www.youtube.com/watch?v=AZDWveIdqjY">http://www.youtube.com/watch?v=AZDWveIdqjY</a></p>
 <p>(Pycon talk by Alex Martelli)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Do you catch all Exceptions?</h3>
-    </hgroup>
-    <article class="">
-      <p>For simple scripts, let exceptions happen.</p>
+<p>For simple scripts, let exceptions happen.</p>
 <p>Only handle the exception if the code can and will do something about it.</p>
 <p>(much better debugging info when an error does occur)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Exceptions -- finally</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+</div>
+<div class="section" id="exceptions-finally">
+<h3>Exceptions &#8211; finally<a class="headerlink" href="#exceptions-finally" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
     <span class="n">do_something</span><span class="p">()</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;missing.txt&#39;</span><span class="p">)</span>
     <span class="n">process</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>   <span class="c"># never called if file missing</span>
@@ -900,18 +621,11 @@ can be relied on.</p>
     <span class="n">do_some_clean</span><span class="o">-</span><span class="n">up</span>
 </pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">finally:</span></tt>  clause will always run</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Exceptions -- else</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+<p>The <code class="docutils literal"><span class="pre">finally:</span></code>  clause will always run</p>
+</div>
+<div class="section" id="exceptions-else">
+<h3>Exceptions &#8211; else<a class="headerlink" href="#exceptions-else" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
     <span class="n">do_something</span><span class="p">()</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;missing.txt&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
@@ -924,17 +638,10 @@ can be relied on.</p>
 <dt>Advantage:</dt>
 <dd>you know where the Exception came from</dd>
 </dl>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Exceptions -- using them</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+</div>
+<div class="section" id="exceptions-using-them">
+<h3>Exceptions &#8211; using them<a class="headerlink" href="#exceptions-using-them" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
     <span class="n">do_something</span><span class="p">()</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;missing.txt&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">the_error</span><span class="p">:</span>
@@ -950,17 +657,10 @@ can be relied on.</p>
 </pre></div>
 </div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Raising Exceptions</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+</div>
+<div class="section" id="raising-exceptions">
+<h3>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s">&quot;b can not be zero&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -974,17 +674,10 @@ can be relied on.</p>
 </pre></div>
 </div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Built in Exceptions</h3>
-    </hgroup>
-    <article class="">
-      <p>You can create your own custom exceptions, but...</p>
+</div>
+<div class="section" id="built-in-exceptions">
+<h3>Built in Exceptions<a class="headerlink" href="#built-in-exceptions" title="Permalink to this headline">¶</a></h3>
+<p>You can create your own custom exceptions, but...</p>
 <div class="build container">
 <div class="highlight-python"><div class="highlight"><pre><span class="n">exp</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">__builtin__</span><span class="p">)</span> <span class="k">if</span> <span class="s">&quot;Error&quot;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">]</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
@@ -993,19 +686,9 @@ can be relied on.</p>
 </div>
 <p>For the most part, you can/should use a built in one</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Built in Exceptions</h3>
-    </hgroup>
-    <article class="">
-      <p>Choose the best match you can for the built in Exception you raise.</p>
+<p>Choose the best match you can for the built in Exception you raise.</p>
 <div class="build container">
-<p>Example (for last week's ackerman homework):</p>
+<p>Example (for last week&#8217;s ackerman homework):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="nb">int</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)):</span>
     <span class="k">raise</span> <span class="ne">ValueError</span>
 </pre></div>
@@ -1018,68 +701,34 @@ can be relied on.</p>
 </div>
 <p>but should you be checking type anyway? (EAFP)</p>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2">
-    <hgroup>
-      <h2>File Reading and Writing</h2>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Files</h3>
-    </hgroup>
-    <article class="">
-      <p>Text Files</p>
+</div>
+</div>
+<div class="section" id="file-reading-and-writing">
+<h2>File Reading and Writing<a class="headerlink" href="#file-reading-and-writing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="files">
+<h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
+<p>Text Files</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">io</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;secrets.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
 <span class="n">secret_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">secret_data</span></tt> is a (unicode) string</p>
-<p><tt class="docutils literal"><span class="pre">encoding</span></tt> defaults to <tt class="docutils literal"><span class="pre">sys.getdefaultencoding()</span></tt> -- often NOT what you
+<p><code class="docutils literal"><span class="pre">secret_data</span></code> is a (unicode) string</p>
+<p><code class="docutils literal"><span class="pre">encoding</span></code> defaults to <code class="docutils literal"><span class="pre">sys.getdefaultencoding()</span></code> &#8211; often NOT what you
 want.</p>
-<p>(There is also the regular <tt class="docutils literal"><span class="pre">open()</span></tt> built in, but it won't handle Unicode for
+<p>(There is also the regular <code class="docutils literal"><span class="pre">open()</span></code> built in, but it won&#8217;t handle Unicode for
 you...)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Files</h3>
-    </hgroup>
-    <article class="">
-      <p>Binary Files</p>
+<p>Binary Files</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;secrets.bin&#39;</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
 <span class="n">secret_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">secret_data</span></tt>  is a byte string</p>
-<p>(with arbitrary bytes in it -- well, not arbitrary -- whatever is in the file.)</p>
-<p>(See the <tt class="docutils literal"><span class="pre">struct</span></tt>  module to unpack formatted binary data)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Files</h3>
-    </hgroup>
-    <article class="">
-      <p>File Opening Modes</p>
+<p><code class="docutils literal"><span class="pre">secret_data</span></code>  is a byte string</p>
+<p>(with arbitrary bytes in it &#8211; well, not arbitrary &#8211; whatever is in the file.)</p>
+<p>(See the <code class="docutils literal"><span class="pre">struct</span></code>  module to unpack formatted binary data)</p>
+<p>File Opening Modes</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;secrets.txt&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">mode</span><span class="p">])</span>
 <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span>
 <span class="s">&#39;rb&#39;</span><span class="p">,</span> <span class="s">&#39;wb&#39;</span><span class="p">,</span> <span class="s">&#39;ab&#39;</span>
@@ -1089,69 +738,42 @@ you...)</p>
 <span class="n">U</span><span class="o">+</span>
 </pre></div>
 </div>
-<p>These follow the Unix conventions, and aren't all that well documented on the
+<p>These follow the Unix conventions, and aren&#8217;t all that well documented on the
 Python docs. But these BSD docs make it pretty clear:</p>
 <p><a class="reference external" href="http://www.manpagez.com/man/3/fopen/">http://www.manpagez.com/man/3/fopen/</a></p>
-<p><strong>Gotcha</strong> -- 'w' modes always clear the file</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Text File Notes</h3>
-    </hgroup>
-    <article class="">
-      <p>Text is default</p>
+<p><strong>Gotcha</strong> &#8211; &#8216;w&#8217; modes always clear the file</p>
+<p>Text is default</p>
 <ul class="simple">
-<li>Newlines are translated: <tt class="docutils literal"><span class="pre">\r\n</span> <span class="pre">-&gt;</span> <span class="pre">\n</span></tt></li>
-<li>-- reading and writing!</li>
-<li>Use *nix-style in your code: <tt class="docutils literal"><span class="pre">\n</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">io.open()</span></tt> returns various &quot;stream&quot; objects -- but they act like file
+<li>Newlines are translated: <code class="docutils literal"><span class="pre">\r\n</span> <span class="pre">-&gt;</span> <span class="pre">\n</span></code></li>
+<li>&#8211; reading and writing!</li>
+<li>Use *nix-style in your code: <code class="docutils literal"><span class="pre">\n</span></code></li>
+<li><code class="docutils literal"><span class="pre">io.open()</span></code> returns various &#8220;stream&#8221; objects &#8211; but they act like file
 objects.</li>
-<li>In text mode, io.open() defaults to &quot;Universal&quot; newline mode.</li>
+<li>In text mode, io.open() defaults to &#8220;Universal&#8221; newline mode.</li>
 </ul>
 <p>Gotcha:</p>
 <ul class="simple">
 <li>no difference between text and binary on *nix</li>
 <li>breaks on Windows</li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Other parameters to <tt class="docutils literal"><span class="pre">io.open()</span></tt>:</h3>
-    </hgroup>
-    <article class="">
-      <p><tt class="docutils literal"><span class="pre">io.open(file,</span> <span class="pre">mode='r',</span> <span class="pre">buffering=-1,</span> <span class="pre">encoding=None,</span> <span class="pre">errors=None,</span> <span class="pre">newline=None,</span> <span class="pre">closefd=True)</span></tt></p>
+<p><code class="docutils literal"><span class="pre">io.open(file,</span> <span class="pre">mode='r',</span> <span class="pre">buffering=-1,</span> <span class="pre">encoding=None,</span> <span class="pre">errors=None,</span> <span class="pre">newline=None,</span> <span class="pre">closefd=True)</span></code></p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">file</span></tt> is generally a file name or full path</li>
-<li><tt class="docutils literal"><span class="pre">mode</span></tt> is the mode for opening: 'r', 'w', etc.</li>
-<li><tt class="docutils literal"><span class="pre">buffering</span></tt> controls the buffering mode (0 for no buffering)</li>
-<li><tt class="docutils literal"><span class="pre">encoding</span></tt> sets the unicode encoding -- only for text files -- when set,
+<li><code class="docutils literal"><span class="pre">file</span></code> is generally a file name or full path</li>
+<li><code class="docutils literal"><span class="pre">mode</span></code> is the mode for opening: &#8216;r&#8217;, &#8216;w&#8217;, etc.</li>
+<li><code class="docutils literal"><span class="pre">buffering</span></code> controls the buffering mode (0 for no buffering)</li>
+<li><code class="docutils literal"><span class="pre">encoding</span></code> sets the unicode encoding &#8211; only for text files &#8211; when set,
 you can ONLY write unicode object to the file.</li>
-<li><tt class="docutils literal"><span class="pre">errors</span></tt> sets the encoding error mode: 'strict', 'ignore', 'replace',...</li>
-<li><tt class="docutils literal"><span class="pre">newline</span></tt> controls Universal Newline mode: lets you write DOS-type files on
+<li><code class="docutils literal"><span class="pre">errors</span></code> sets the encoding error mode: &#8216;strict&#8217;, &#8216;ignore&#8217;, &#8216;replace&#8217;,...</li>
+<li><code class="docutils literal"><span class="pre">newline</span></code> controls Universal Newline mode: lets you write DOS-type files on
 *nix, for instance (text mode only).</li>
-<li><tt class="docutils literal"><span class="pre">closedfd</span></tt> controls close()  behavior if a file descriptor, rather than a
+<li><code class="docutils literal"><span class="pre">closedfd</span></code> controls close()  behavior if a file descriptor, rather than a
 name is passed in (advanced usage!)</li>
 </ul>
 <p>(<a class="reference external" href="https://docs.python.org/2/library/io.html?highlight=io.open#io.open">https://docs.python.org/2/library/io.html?highlight=io.open#io.open</a>)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>File Reading</h3>
-    </hgroup>
-    <article class="">
-      <p>Reading part of a file</p>
+</div>
+<div class="section" id="file-reading">
+<h3>File Reading<a class="headerlink" href="#file-reading" title="Permalink to this headline">¶</a></h3>
+<p>Reading part of a file</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">header_size</span> <span class="o">=</span> <span class="mi">4096</span>
 <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;secrets.txt&#39;</span><span class="p">)</span>
 <span class="n">secret_header</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">header_size</span><span class="p">)</span>
@@ -1159,17 +781,7 @@ name is passed in (advanced usage!)</li>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>File Reading</h3>
-    </hgroup>
-    <article class="">
-      <p>Common Idioms</p>
+<p>Common Idioms</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;secrets.txt&#39;</span><span class="p">):</span>
     <span class="k">print</span> <span class="n">line</span>
 </pre></div>
@@ -1185,32 +797,18 @@ name is passed in (advanced usage!)</li>
 </pre></div>
 </div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>File Writing</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="n">outfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+</div>
+<div class="section" id="file-writing">
+<h3>File Writing<a class="headerlink" href="#file-writing" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">outfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;this is line: </span><span class="si">%i</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">%</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>File Methods</h3>
-    </hgroup>
-    <article class="">
-      <p>Commonly Used Methods</p>
+</div>
+<div class="section" id="file-methods">
+<h3>File Methods<a class="headerlink" href="#file-methods" title="Permalink to this headline">¶</a></h3>
+<p>Commonly Used Methods</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
@@ -1222,36 +820,22 @@ name is passed in (advanced usage!)</li>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>File Like Objects</h3>
-    </hgroup>
-    <article class="">
-      <p>Many classes implement the file interface:</p>
+</div>
+<div class="section" id="file-like-objects">
+<h3>File Like Objects<a class="headerlink" href="#file-like-objects" title="Permalink to this headline">¶</a></h3>
+<p>Many classes implement the file interface:</p>
 <ul class="build simple">
 <li>loggers</li>
-<li><tt class="docutils literal"><span class="pre">sys.stdout</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">urllib.open()</span></tt></li>
+<li><code class="docutils literal"><span class="pre">sys.stdout</span></code></li>
+<li><code class="docutils literal"><span class="pre">urllib.open()</span></code></li>
 <li>pipes, subprocesses</li>
 <li>StringIO</li>
 </ul>
 <p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#file-objects">https://docs.python.org/2/library/stdtypes.html#file-objects</a></p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>StringIO</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">417</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">StringIO</span>
+</div>
+<div class="section" id="stringio">
+<h3>StringIO<a class="headerlink" href="#stringio" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">417</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">StringIO</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">420</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">421</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">u&quot;somestuff&quot;</span><span class="p">)</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">422</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1260,27 +844,13 @@ name is passed in (advanced usage!)</li>
 </pre></div>
 </div>
 <p>(handy for testing file handling code...)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2">
-    <hgroup>
-      <h2>Paths and Directories</h2>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Paths</h3>
-    </hgroup>
-    <article class="">
-      <p>Paths are generally handled with simple strings (or Unicode strings)</p>
+</div>
+</div>
+<div class="section" id="paths-and-directories">
+<h2>Paths and Directories<a class="headerlink" href="#paths-and-directories" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="paths">
+<h3>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h3>
+<p>Paths are generally handled with simple strings (or Unicode strings)</p>
 <p>Relative paths:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;secret.txt&#39;</span>
 <span class="s">u&#39;./secret.txt&#39;</span>
@@ -1290,35 +860,18 @@ name is passed in (advanced usage!)</li>
 <div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;/home/chris/secret.txt&#39;</span>
 </pre></div>
 </div>
-<p>Either work with <tt class="docutils literal"><span class="pre">open()</span></tt> , etc.</p>
+<p>Either work with <code class="docutils literal"><span class="pre">open()</span></code> , etc.</p>
 <p>(working directory only makes sense with command-line programs...)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>os module</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre>os.getcwd() -- os.getcwdu() (u for Unicode)
+</div>
+<div class="section" id="os-module">
+<h3>os module<a class="headerlink" href="#os-module" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>os.getcwd() -- os.getcwdu() (u for Unicode)
 chdir(path)
 os.path.abspath()
 os.path.relpath()￼
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>os.path module</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">()</span>
@@ -1326,49 +879,22 @@ os.path.relpath()￼
 </pre></div>
 </div>
 <p>(all platform independent)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>directories</h3>
-    </hgroup>
-    <article class="">
-      <div class="highlight-python"><div class="highlight"><pre><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>(higher level stuff in <tt class="docutils literal"><span class="pre">shutil</span></tt>  module)</p>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>pathlib</h3>
-    </hgroup>
-    <article class="">
-      <p><tt class="docutils literal"><span class="pre">pathlib</span></tt> is a new package for handling paths in an OO way:</p>
+<p>(higher level stuff in <code class="docutils literal"><span class="pre">shutil</span></code>  module)</p>
+</div>
+<div class="section" id="pathlib">
+<h3>pathlib<a class="headerlink" href="#pathlib" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">pathlib</span></code> is a new package for handling paths in an OO way:</p>
 <p><a class="reference external" href="http://pathlib.readthedocs.org/en/pep428/">http://pathlib.readthedocs.org/en/pep428/</a></p>
 <p>It is now part of the Python3 standard library, and has been back-ported for use with Python2:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pip install pathlib
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>pathlib</h3>
-    </hgroup>
-    <article class="">
-      <p>All the stuff in os.path and more:</p>
+<p>All the stuff in os.path and more:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [64]: </span><span class="kn">import</span> <span class="nn">pathlib</span>
 <span class="gp">In [65]: </span><span class="n">pth</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s">&#39;./&#39;</span><span class="p">)</span>
 <span class="gp">In [66]: </span><span class="n">pth</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span>
@@ -1382,84 +908,39 @@ os.path.relpath()￼
 <span class="go">...</span>
 </pre></div>
 </div>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-2">
-    <hgroup>
-      <h2>Homework</h2>
-    </hgroup>
-    <article class="">
-      
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Recommended Reading:</h3>
-    </hgroup>
-    <article class="">
-      <ul class="simple">
-<li>Dive Into Python: Chapt. 13,14</li>
-<li>Unicode: <a class="reference external" href="http://www.joelonsoftware.com/articles/Unicode.html">http://www.joelonsoftware.com/articles/Unicode.html</a></li>
+</div>
+</div>
+<div class="section" id="homework">
+<h2>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="assignments">
+<h3>Assignments:<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Task 8: dict/sets lab</li>
+<li>Task 9: Exceptions</li>
+<li>Task 10: Mailroom Madness</li>
+<li>Task 11: Investigate Session 5</li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Assignments:</h3>
-    </hgroup>
-    <article class="">
-      <ul class="simple">
-<li>dict/sets lab</li>
-<li>Exceptions</li>
-<li>coding kata: trigrams</li>
-<li>Mailroom Madness</li>
-</ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionaries and Sets</h3>
-    </hgroup>
-    <article class="">
-      <ol class="arabic simple">
+</div>
+<div class="section" id="task-8-dictionaries-and-sets">
+<h3>Task 8: Dictionaries and Sets<a class="headerlink" href="#task-8-dictionaries-and-sets" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
 <li></li>
 </ol>
 <ul class="simple">
-<li>Create a dictionary containing &quot;name&quot;, &quot;city&quot;, and &quot;cake&quot; for &quot;Chris&quot; from
-&quot;Seattle&quot; who likes &quot;Chocolate&quot;.</li>
+<li>Create a dictionary containing &#8220;name&#8221;, &#8220;city&#8221;, and &#8220;cake&#8221; for &#8220;Chris&#8221; from
+&#8220;Seattle&#8221; who likes &#8220;Chocolate&#8221;.</li>
 <li>Display the dictionary.</li>
-<li>Delete the entry for &quot;cake&quot;.</li>
+<li>Delete the entry for &#8220;cake&#8221;.</li>
 <li>Display the dictionary.</li>
-<li>Add an entry for &quot;fruit&quot; with &quot;Mango&quot; and display the dictionary.<ul>
+<li>Add an entry for &#8220;fruit&#8221; with &#8220;Mango&#8221; and display the dictionary.<ul>
 <li>Display the dictionary keys.</li>
 <li>Display the dictionary values.</li>
-<li>Display whether or not &quot;cake&quot; is a key in the dictionary (i.e. False) (now).</li>
-<li>Display whether or not &quot;Mango&quot; is a value in the dictionary.</li>
+<li>Display whether or not &#8220;cake&#8221; is a key in the dictionary (i.e. False) (now).</li>
+<li>Display whether or not &#8220;Mango&#8221; is a value in the dictionary.</li>
 </ul>
 </li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Dictionaries and Sets</h3>
-    </hgroup>
-    <article class="">
-      <ol class="arabic simple" start="2">
+<ol class="arabic simple" start="2">
 <li></li>
 </ol>
 <ul class="simple">
@@ -1471,19 +952,9 @@ to fifteen and the hexadecimal equivalent (string is fine).</li>
 </ol>
 <ul class="simple">
 <li>Using the dictionary from item 1: Make a dictionary using the same keys but
-with the number of 'a's in each value.</li>
+with the number of &#8216;a&#8217;s in each value.</li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>sets</h3>
-    </hgroup>
-    <article class="">
-      <ol class="arabic simple" start="4">
+<ol class="arabic simple" start="4">
 <li></li>
 </ol>
 <ul class="simple">
@@ -1497,58 +968,30 @@ divisible 2, 3 and 4.</li>
 <li></li>
 </ol>
 <ul class="simple">
-<li>Create a set with the letters in 'Python' and add 'i' to the set.</li>
-<li>Create a frozenset with the letters in 'marathon'</li>
+<li>Create a set with the letters in &#8216;Python&#8217; and add &#8216;i&#8217; to the set.</li>
+<li>Create a frozenset with the letters in &#8216;marathon&#8217;</li>
 <li>display the union and intersection of the two sets.</li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Text and files and dicts, and...</h3>
-    </hgroup>
-    <article class="">
-      <ul>
-<li><p class="first">Coding Kata 14 - Dave Thomas</p>
-<p><a class="reference external" href="http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/">http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/</a></p>
-<p>and in this doc:</p>
-<p><a class="reference external" href="http://codefellows.github.io/sea-c28-students/supplements/kata_fourteen.html">http://codefellows.github.io/sea-c28-students/supplements/kata_fourteen.html</a></p>
-</li>
-<li><p class="first">Use The Adventures of Sherlock Holmes as input:</p>
-<p><a class="reference external" href="http://codefellows.github.io/sea-c28-students/_downloads/sherlock.txt">http://codefellows.github.io/sea-c28-students/_downloads/sherlock.txt</a></p>
-</li>
-<li><p class="first">This is intentionally open-ended and underspecified. There are many
-interesting decisions to make.</p>
-</li>
-<li><p class="first">Experiment with different lengths for the lookup key. (3 words, 4 words, 3
-letters, etc)</p>
-</li>
-</ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Exceptions</h3>
-    </hgroup>
-    <article class="">
-      <ul>
+</div>
+<div class="section" id="text-and-files-and-dicts-and">
+<h3>Text and files and dicts, and...<a class="headerlink" href="#text-and-files-and-dicts-and" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="task-9-exceptions">
+<h3>Task 9: Exceptions<a class="headerlink" href="#task-9-exceptions" title="Permalink to this headline">¶</a></h3>
+<ul>
 <li><p class="first">Improving raw_input :
-- Create a new file: safe_input.py -- add it to your repo, and submit a pull</p>
-<q>
-request. Make sure to make frequent commits with good commit messages.</q>
+- Create a new file: safe_input.py &#8211; add it to your repo, and submit a pull</p>
+<blockquote>
+<div><p>request. Make sure to make frequent commits with good commit messages.</p>
+</div></blockquote>
 </li>
 <li><p class="first">The raw_input() function can generate two exceptions:
 - EOFError or end-of-file (EOF)
 - KeyboardInterrupt  or canceled input.
-- Create a wrapper function, perhaps safe_input() that returns 'None' rather</p>
-<q>
-than raising these exceptions.</q>
+- Create a wrapper function, perhaps safe_input() that returns &#8216;None&#8217; rather</p>
+<blockquote>
+<div><p>than raising these exceptions.</p>
+</div></blockquote>
 </li>
 <li><p class="first">Note:
 - ^C causes a KeyboardInterrupt Error
@@ -1557,78 +1000,180 @@ than raising these exceptions.</q>
 </li>
 <li><p class="first">The next step should be done in your mailroom.py file:
 - Update your mailroom.py program to use exceptions (and BAFP) to handle</p>
-<q>
-malformed numeric input (and other malformed input)</q>
+<blockquote>
+<div><p>malformed numeric input (and other malformed input)</p>
+</div></blockquote>
 <ul class="simple">
-<li>Make sure to have your commit comment reflect that you've added this
+<li>Make sure to have your commit comment reflect that you&#8217;ve added this
 feature</li>
 </ul>
 </li>
 </ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Paths and File Processing</h3>
-    </hgroup>
-    <article class="">
-      <ul class="simple">
-<li>write a program which prints the full path to all files in the current
-directory, one per line</li>
-<li>write a program which copies a file from a source, to a destination (without
-using shutil, or the OS copy command)</li>
-</ul>
-
-
-
-
-    </article>
-  </slide>  <slide class="level-3">
-    <hgroup>
-      <h3>Mailroom Madness</h3>
-    </hgroup>
-    <article class="">
-      <ul class="simple">
-<li>Using all you've learned so far, complete your mailroom program according to
+</div>
+<div class="section" id="task-10-mailroom-madness">
+<h3>Task 10: Mailroom Madness<a class="headerlink" href="#task-10-mailroom-madness" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Using all you&#8217;ve learned so far, complete your mailroom program according to
 the pseudocode and flow chart you created last session.<ul>
 <li>use dicts where appropriate</li>
 <li>see if you can use a dict to switch between the users selections</li>
 <li>Try to use a dict and the .format() method to do the letter as one big
-template -- rather than building up a big string in parts.</li>
+template &#8211; rather than building up a big string in parts.</li>
 <li>For extra fun, see if you can use a file to preserve the donation list and
 changes made to it while the program is running.</li>
 </ul>
 </li>
 </ul>
+</div>
+<div class="section" id="task-11-investigate-session-5">
+<h3>Task 11: Investigate Session 5<a class="headerlink" href="#task-11-investigate-session-5" title="Permalink to this headline">¶</a></h3>
+<p>Read through the Session 05 slides.</p>
+<p><a class="reference external" href="http://codefellows.github.io/sea-c34-python/session05.html">http://codefellows.github.io/sea-c34-python/session05.html</a></p>
+<p>There are three sections. For each one, come up with three questions each.</p>
+<ul class="simple">
+<li>Arguments (3 questions)</li>
+<li>Comprehensions (3 questions)</li>
+<li>Lambdas and Functional Programming (3 questions)</li>
+</ul>
+<p>Write some
+Python code to help you answer them, one function per question.</p>
+<p>For each function, write a good <code class="docutils literal"><span class="pre">docstring</span></code> describing what
+question you are trying to answer.</p>
+<p>Put the functions in four separate modules (files) called
+<cite>arguments.py</cite>, <cite>comprehensions.py</cite>, <cite>functional.py</cite> in the
+<code class="docutils literal"><span class="pre">session05</span></code> subdirectory of your student directory.</p>
+<p>That is, you should have nine questions, and nine functions, total,
+spread out across three files.</p>
+<p>Use everything you&#8217;ve learned
+so far as needed (including lists, tuples, slicing, iteration, functions, booleans, printing, modules, assertions, dictionaries,
+sets, exceptions, file reading/writing, and paths).</p>
+<p>Create a branch in your local repo called <cite>task11</cite> and switch to it (<cite>git checkout task11</cite>).</p>
+<p>Add your files
+to that branch, commit and push, then submit a pull request to
+the main class repo.</p>
+<p>Finally, submit your assignment in Canvas by giving the URL of the pull request.</p>
+</div>
+</div>
+</div>
 
 
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Session Four: Dictionaries, Sets, Exceptions, and Files</a><ul>
+<li><a class="reference internal" href="#review-questions">Review/Questions</a><ul>
+<li><a class="reference internal" href="#review-of-previous-classes">Review of Previous Classes</a></li>
+<li><a class="reference internal" href="#looping-through-two-loops-at-once">Looping through two loops at once:</a></li>
+<li><a class="reference internal" href="#homework-comments">Homework comments</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#a-little-warm-up">A little warm up</a><ul>
+<li><a class="reference internal" href="#fun-with-strings">Fun with strings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#homework-review">Homework Review</a></li>
+<li><a class="reference internal" href="#prepare-your-questions">Prepare your Questions</a></li>
+<li><a class="reference internal" href="#today-s-puzzle-trigrams">Today&#8217;s Puzzle: Trigrams</a></li>
+<li><a class="reference internal" href="#announcements">Announcements</a></li>
+<li><a class="reference internal" href="#dictionaries-and-sets">Dictionaries and Sets</a><ul>
+<li><a class="reference internal" href="#dictionary">Dictionary</a></li>
+<li><a class="reference internal" href="#dictionary-constructors">Dictionary Constructors</a></li>
+<li><a class="reference internal" href="#dictionary-indexing">Dictionary Indexing</a></li>
+<li><a class="reference internal" href="#dictionary-ordering-not">Dictionary Ordering (not)</a></li>
+<li><a class="reference internal" href="#dictionary-iterating">Dictionary Iterating</a></li>
+<li><a class="reference internal" href="#dict-keys-and-values">dict keys and values</a></li>
+<li><a class="reference internal" href="#id1">dict keys and values</a></li>
+<li><a class="reference internal" href="#dictionary-performance">Dictionary Performance</a></li>
+<li><a class="reference internal" href="#other-dict-operations">Other dict operations:</a></li>
+<li><a class="reference internal" href="#sets">Sets</a></li>
+<li><a class="reference internal" href="#set-properties">Set Properties</a></li>
+<li><a class="reference internal" href="#set-methods">Set Methods</a></li>
+<li><a class="reference internal" href="#frozen-set">Frozen Set</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li><a class="reference internal" href="#id2">Exceptions</a></li>
+<li><a class="reference internal" href="#id3">Exceptions</a></li>
+<li><a class="reference internal" href="#exceptions-finally">Exceptions &#8211; finally</a></li>
+<li><a class="reference internal" href="#exceptions-else">Exceptions &#8211; else</a></li>
+<li><a class="reference internal" href="#exceptions-using-them">Exceptions &#8211; using them</a></li>
+<li><a class="reference internal" href="#raising-exceptions">Raising Exceptions</a></li>
+<li><a class="reference internal" href="#built-in-exceptions">Built in Exceptions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#file-reading-and-writing">File Reading and Writing</a><ul>
+<li><a class="reference internal" href="#files">Files</a></li>
+<li><a class="reference internal" href="#file-reading">File Reading</a></li>
+<li><a class="reference internal" href="#file-writing">File Writing</a></li>
+<li><a class="reference internal" href="#file-methods">File Methods</a></li>
+<li><a class="reference internal" href="#file-like-objects">File Like Objects</a></li>
+<li><a class="reference internal" href="#stringio">StringIO</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#paths-and-directories">Paths and Directories</a><ul>
+<li><a class="reference internal" href="#paths">Paths</a></li>
+<li><a class="reference internal" href="#os-module">os module</a></li>
+<li><a class="reference internal" href="#pathlib">pathlib</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#homework">Homework</a><ul>
+<li><a class="reference internal" href="#assignments">Assignments:</a></li>
+<li><a class="reference internal" href="#task-8-dictionaries-and-sets">Task 8: Dictionaries and Sets</a></li>
+<li><a class="reference internal" href="#text-and-files-and-dicts-and">Text and files and dicts, and...</a></li>
+<li><a class="reference internal" href="#task-9-exceptions">Task 9: Exceptions</a></li>
+<li><a class="reference internal" href="#task-10-mailroom-madness">Task 10: Mailroom Madness</a></li>
+<li><a class="reference internal" href="#task-11-investigate-session-5">Task 11: Investigate Session 5</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-
-    </article>
-  </slide>
-
-
-    <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img src="https://dgosxlrnzhofi.cloudfront.net/assets/logo-3fc81b216ed94ef783583de4160a97ef.svg"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <h2>&lt;Thank You!&gt;</h2>
-      <p>&nbsp;</p>
-    </article>
-    <p class="auto-fadein" data-config-contact>
-      <!-- populated from slide_config.json -->
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="session03.html"
+                        title="previous chapter">Session Three: Sequences, Iteration and String Formatting</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="session05.html"
+                        title="next chapter">Session Five: Arguments, Comprehensions, Lambdas and Functional Programming</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
     </p>
-  </slide>
-
-  <slide class="backdrop"></slide>
-
-</slides>
-
-<!--[if IE]>
-  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-  <script>CFInstall.check({mode: 'overlay'});</script>
-<![endif]-->
-</body>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="session05.html" title="Session Five: Arguments, Comprehensions, Lambdas and Functional Programming"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="session03.html" title="Session Three: Sequences, Iteration and String Formatting"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">F2 Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Christopher Barker, Cris Ewing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
 </html>
